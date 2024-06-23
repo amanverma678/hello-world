@@ -14,18 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4  # Ensures compatibility with Node.js 20
-
-    - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to v4 to use Node.js 20
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install unittest
+      uses: actions/checkout@v4  # Updated to v4 to ensure it's using the latest version
 
     - name: Run tests
       run: |
-        python -m unittest discover tests
+        chmod +x hello.sh
+        chmod +x test_hello.sh
+        ./test_hello.sh
