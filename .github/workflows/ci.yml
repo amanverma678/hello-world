@@ -19,5 +19,5 @@ jobs:
     - name: Run tests
       run: |
         chmod +x hello.sh
-        chmod +x test_hello.sh
-        ./test_hello.sh
+        chmod +x tests/test_hello.sh
+        ./tests/test_hello.sh
