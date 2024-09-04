@@ -1,7 +1,19 @@
-version: 2
-updates:
-  - package-ecosystem: "yarn"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 3
+name: Dependabot Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Dependabot
+        uses: dependabot/fetch-metadata@v1
+        with:
+          package-manager: 'yarn'
+          directory: '/'
